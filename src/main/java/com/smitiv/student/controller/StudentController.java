@@ -39,8 +39,8 @@ public class StudentController {
 	// create resource
 	@PostMapping(value = "/save", consumes = { "application/json", "application/xml" }, produces = { "application/json",
 			"application/xml" })
-	public ResponseEntity<Student> create(@Valid @RequestBody Student Student) {
-		Student studentObj = studentService.saveStudent(Student);
+	public ResponseEntity<Student> create(@Valid @RequestBody Student student) {
+		Student studentObj = studentService.saveStudent(student);
 		return new ResponseEntity<Student>(studentObj, HttpStatus.CREATED);
 
 	}
@@ -82,7 +82,6 @@ public class StudentController {
 	}
 
 	// delete student by id
-	@ResponseStatus(code = HttpStatus.OK)
 	@DeleteMapping(value = "/deleteById/{id}")
 	public ResponseEntity<?> deleteEmp(@PathVariable long id) {
 
