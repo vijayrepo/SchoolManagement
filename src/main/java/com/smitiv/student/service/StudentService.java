@@ -52,10 +52,5 @@ public class StudentService {
 	public void deleteStudent(long id) {
 		studentRepo.deleteById(id);
 	}
-
-	// delete all entities
-	public void deleteAll() {
-		studentRepo.deleteAll();
-	}
-
+	
 }
